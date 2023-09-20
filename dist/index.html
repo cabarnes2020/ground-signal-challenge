@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Map Search Test</title>
+		<meta name="description" content="Testing creation of a map search feature"/>
+		<meta name="author" content="Christion Barnes"/>
+		<!-- CSS file needed to use Leaflet -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     		crossorigin=""/>
+		<!-- JS file needed to use Leaflet -->
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+			 integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+			 crossorigin=""></script>
+		<link href="./output.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div id="root">
+			<div id="searchbar"></div>
+			<div id="map" ></div>
+		</div>
+		
+		<script>
+			//Instantiates the Leaflet base map for the project
+			const map = L.map('map').setView([42.346, -71.042], 16)
+
+			//Allows me to access instance of map in other files
+			window.map = map
+
+			//Adds a layer on top of map that mirrors the Google Maps layout/view
+			const googleMapsLayer = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+        				maxZoom: 20,
+        				subdomains:['mt0','mt1','mt2','mt3']
+			});
+
+			googleMapsLayer.addTo(map)
+		</script>
+		<!-- <script>
+			function initMap() {
+				const map = new google.maps.Map(document.querySelector(".map"), {
+					center: {
+						lat: -34.397,
+						lng: 150.644
+					},
+					scrollwheel: false,
+					zoom: 8,
+				})
+
+				google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
+					console.log('tiles loaded')
+				})
+			}
+		</script>
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA8YqmNbm_nhSF4GPwOczFzDNNjEgjwuys&callback=initMap" async defer></script> -->
+		<script src="./bundle.js"></script>
+	</body>
+</html>
