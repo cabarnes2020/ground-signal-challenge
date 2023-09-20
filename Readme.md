@@ -1,5 +1,13 @@
 # Map Search Test
 
+## How To Run Project
+- Create a split terminal in root directory
+- In right terminal run "npm run tw" to trigger tailwind
+- In left terminal run "npm run build" to build project files
+- After npm run build is done executing, run "npm start" to fire up the project
+
+
+
 ## Base Files
 
 You've been given:
