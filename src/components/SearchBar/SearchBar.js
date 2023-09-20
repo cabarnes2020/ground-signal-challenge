@@ -20,6 +20,7 @@ const onChange = (e) => {
 
     if(keyWord === ""){
         setFilteredSearch([])
+        
     }
     else{
         setFilteredSearch(filteredResults)
